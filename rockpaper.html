@@ -17,8 +17,29 @@ function getComputerChoice () {
 // console.log(getComputerChoice());
 
 function getHumanChoice () {
-    
+    let choice;
+    const validChoices = ["rock", "paper", "scissors"];
+
+    while (true) {
+        choice = prompt("Enter your choice: rock, paper or scissors!");
+
+        if (choice === null) {
+            alert("The game has been canceled by the user!");
+            return null;
+        }
+
+        choice = choice.toLowerCase();
+
+        if (validChoices.includes(choice)) {
+            return choice;
+        } else {
+            alert("Invalid input! Please enter only rock, paper, or scissors.");
+        }
+    }
 }
+// console.log(getHumanChoice());
+
+
 
 </script>
 
