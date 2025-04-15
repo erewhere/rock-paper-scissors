@@ -33,7 +33,7 @@ function getHumanChoice () {
         if (validChoices.includes(choice)) {
             return choice;
         } else {
-            alert("Invalid input! Please enter only rock, paper, or scissors.");
+            alert("Invalid input! Please enter only rock, paper, or scissors (lower case sensitive).");
         }
     }
 }
@@ -44,7 +44,28 @@ let computerScore = 0;
 
 // console.log(computerScore);
 
+function playRound (humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
 
+    if (humanChoice === computerChoice) {
+        console.log("We have a tie!");
+        } else if (
+            (humanChoice === "rock" && computerChoice === "scissors") ||
+            (humanChoice === "paper" && computerChoice === "rock") ||
+            (humanChoice === "scissors" && computerChoice === "paper")
+        ) {
+            humanScore++;
+            console.log(`WINNER! ${humanChoice.toUpperCase()} beats ${computerChoice}!`);
+        } else {
+            computerScore++;
+            console.log(`You LOSE! ${computerChoice.toUpperCase()} beats ${humanChoice}!`)
+        }
+    }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
 
 </script>
