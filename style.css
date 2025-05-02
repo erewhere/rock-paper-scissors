@@ -1,0 +1,89 @@
+/* CSS reset and box model normalization */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* base styling */
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    color: #222;
+    padding: 2rem;
+}
+
+/* container utility */
+.game-card {
+    max-width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#reset {
+    font-size: 14px;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 5px;
+}
+
+/* button styles */
+button {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #3cf3ce;
+    color: black;
+}
+
+button:disabled {
+    background-color: #cbcbcb;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    color: white;
+}
+
+/* scoreboard */
+.scoreboard {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scoreboard p {
+    font-weight: bold;
+}
+
+.score-title {
+    text-align: center;
+}
+
+/* results section */
+#results p {
+    margin-top: 1rem;
+    border-left: 4px solid #f36;
+    padding-left: 0.5rem;
+}
